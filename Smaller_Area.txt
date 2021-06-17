@@ -1,0 +1,25 @@
+programa
+{
+	inclua biblioteca Matematica -->mat
+	const real pi = 3.1415
+	inteiro i, n
+	real R, menorArea = 0.0, area, menorRaio = 0.0
+	
+	//pode calcular Raios com casas decimais.
+	funcao inicio(){
+		escreva("Digite quantas áreas você quer calcular:\n")
+		leia(n)
+		para(i = 1; i <= n; i++){
+			escreva("digite o valor do ", i,"º Raio:\n")
+			leia(R)
+			area = pi*(R*R)
+			se(i == 1 ou area < menorArea)
+				menorArea = area
+			
+			se(i == 1 ou R < menorRaio)
+				menorRaio = R	
+		}
+		//biblioteca para limitar o numero final do calculo.
+		escreva("\na menor area é a do Raio ", menorRaio," com aprox. ", mat.arredondar(menorArea,3), "m²")
+	}
+}
